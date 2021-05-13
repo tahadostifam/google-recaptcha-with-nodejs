@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Google Recaptcha Using Node.js</title>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+  </head>
+  <body>
+    <title>Google Recaptcha</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+  </head>
+  <body>
+    <div class='form-group' style="margin-top: 100px; width : 600px; margin-left : 5%;">
+    <h1>Google Recaptcha using [Node.js]</h1>   
+    <form id="comment_form" action='/submit' method="post">
+      <div class="g-recaptcha" data-sitekey="<Google Recaptcha Site Key>"></div><br>
+      <button type="submit" name="submit" class="btn btn-success">Send Request</button>
+    </form>
+  </div>
+  </body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+  <script>
+    $(document).ready(function() {
+      $('#comment_form').submit(function() {
+        $(this).ajaxSubmit({
+          error: function(xhr) {
+            status('Error: ' + xhr.status);
+          },
+         success: function(response) {
+           alert(response.responseDesc);
+         }
+        });
+        return false;
+      });
+    });
+  </script>
+</html>
+
