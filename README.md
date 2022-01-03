@@ -1,23 +1,14 @@
-# Installation & Config
-
-1 -
-
+### Dependencies
 ```bash
-npm i --save
+npm i;
 ```
 
-2 -
-open the 'app.js' in line '23' enter your google recaptcha 'Secret Key'
-and in 'index.html' line '15' enter your google recaptcha 'Site Key'
+### Configs
+`'Secret Key`: `app.js:23`   
+`'Site Key`  : `index.html:15`
 
 # Run
 
 ```bash
 node app.js
-```
-
-or run with nodemon
-
-```bash
-nodomon app.js
 ```
